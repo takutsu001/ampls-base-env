@@ -41,7 +41,7 @@ az login
 az account set --subscription <利用するサブスクリプション名>
 ```
 > [!NOTE]
-> az login を実行するとWebブラウザが起動する。Webブラウザを利用して、Azureへのログインを行う
+> az login を実行するとWebブラウザが起動するので、WebブラウザにてAzureへのログインを行う
 
 #### 2. ディレクトリの移動（main.bicep を設置したディレクトリへ移動）
 ```
