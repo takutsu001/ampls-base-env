@@ -65,4 +65,4 @@ az logout
 - 本エラーは hub-Jump-Server の DNS レコードが重複する場合に発生します。DNSレコードはパラメータファイルで指定した ***hubvmName1*** を利用して作成されるため複数デプロイを行うと DNS レコードが重複する仕様となります
 
 - 同一サブスクリプションに複数デプロイを行いたい場合は **hubEnv.bicep** の以下の行を削除してください
-    > https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a9253e78288050/modules/hubEnv.bicep#L114-L116
+https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a9253e78288050/modules/hubEnv.bicep#L114-L116
