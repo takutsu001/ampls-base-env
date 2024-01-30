@@ -35,25 +35,25 @@ main.prod.bicepparam
 
 ## 実行手順 (Git bash)
 
-1. Azureへのログインと利用するサブスクリプションの指定
+#### 1. Azureへのログインと利用するサブスクリプションの指定
 ```
 az login
 az account set --subscription <利用するサブスクリプション名>
 ```
 > [!NOTE]
-> az login を実行するとWebブラウザが起動するので、ログインを行う
+> az login を実行するとWebブラウザが起動する。Webブラウザを利用して、Azureへのログインを行う
 
-2. ディレクトリの移動（main.bicep を設置したディレクトリへ移動）
+#### 2. ディレクトリの移動（main.bicep を設置したディレクトリへ移動）
 ```
 cd <main.bicepを設置したディレクトリ>
 ```
 
-3. デプロイの実行
+#### 3. デプロイの実行
 ```
 az deployment sub create --location japaneast -f main.bicep -p main.prod.bicepparam
 ```
 
-4. Azureからのログアウト
+#### 4. Azureからのログアウト
 ```
 az logout
 ```
