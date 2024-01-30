@@ -58,11 +58,12 @@ az deployment sub create --location japaneast -f main.bicep -p main.prod.biceppa
 az logout
 ```
 
-## 補足
-- 以下のエラーが出た場合は、すでに作成された環境を一度削除してから再度デプロイを行ってください
-    > DNS record hub-jump-win-01.japaneast.cloudapp.azure.com is already used by another public IP.
+## 実行時のエラーについて
+デプロイ実行時に以下のエラーが出た場合は、すでに作成された環境を一度削除してから再度デプロイを行ってください
+> DNS record hub-jump-win-01.japaneast.cloudapp.azure.com is already used by another public IP.
 
-- 本エラーは hub-Jump-Server の DNS レコードが重複する場合に発生します。DNSレコードはパラメータファイルで指定した ***hubvmName1*** を利用して作成されるため複数デプロイを行うと DNS レコードが重複する仕様となります
+  - 本エラーは hub-Jump-Server の DNS レコードが重複する場合に発生します。DNSレコードはパラメータファイルで指定した ***hubvmName1*** を利用して作成されるため複数デプロイを行うと DNS レコードが重複する仕様となります
 
-- 同一サブスクリプションに複数デプロイを行いたい場合は **hubEnv.bicep** の以下の行を削除してください
-https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a9253e78288050/modules/hubEnv.bicep#L114-L116
+  - 同一サブスクリプションに複数デプロイを行いたい場合は ***hubEnv.bicep*** の以下の行を削除してください
+
+    https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a9253e78288050/modules/hubEnv.bicep#L114-L116
