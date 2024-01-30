@@ -66,5 +66,5 @@ az logout
 
 1. 同一サブスクリプションに本Bicepを利用して複数の環境をデプロイする場合は ***hubvmName1*** を環境毎に異なる名前を指定する
 
-2. ***hubEnv.bicep*** の以下の行を削除する（削除することにより、FQDNによる hub の踏み台サーバへのアクセスはできなくなりますが、IPアドレスでのアクセスは引き続き可能です）
+2. ***hubEnv.bicep*** の以下の行を削除する (削除することにより、FQDNによる hub の踏み台サーバへのアクセスはできなくなりますが、IPアドレスでのアクセスは引き続き可能)
 https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a9253e78288050/modules/hubEnv.bicep#L114-L116
