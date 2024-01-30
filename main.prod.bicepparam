@@ -1,10 +1,10 @@
 using 'main.bicep'
 
-param resourceGroupName = 'test005-rg'
+param resourceGroupName = 'AMPLS-RG'
 param resourceGroupLocation = 'japaneast'
 // ---- for Firewall Rule ----
-// your ip address
-param myipaddress = '124.37.254.233'
+// your ip address for RDP (ex. xxx.xxx.xxx.xxx)
+param myipaddress = '<Public IP Address>'
 // ---- param for Hub ----
 param hubVNetName = 'Hub-VNet'
 param hubVNetAddress = '10.0.0.0/16'
