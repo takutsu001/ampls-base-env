@@ -1,4 +1,4 @@
-## ampls-base-env
+# ampls-base-env
 
 ## はじめに
 本 Bicep は [AMPLS 検証環境用](https://zenn.dev/takutsu/articles/zenn-ampls-instruction) のベース環境を作成するBicepです。AMPLSの検証をしてみたいけど１から環境を作るのはめんどくさいなーと思う方にでも利用していただけますと幸いです（Bicepの勉強を兼ねて作成しています。初Bicepなのでべた書きですがご容赦ください）
