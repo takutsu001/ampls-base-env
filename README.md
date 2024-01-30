@@ -40,6 +40,8 @@ main.prod.bicepparam
 az login
 az account set --subscription <利用するサブスクリプション名>
 ```
+> [!NOTE]
+> az login を実行するとWebブラウザが起動するので、ログインを行う
 
 2. ディレクトリの移動（main.bicep を設置したディレクトリへ移動）
 ```
