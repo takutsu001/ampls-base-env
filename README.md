@@ -20,8 +20,8 @@ https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/install
 main.prod.bicepparam
 ![](/images/bicepparam.png)
 
-> [!NOTE]
-> NSGルール作成用の「myipaddress」の修正は必須となります。それ以外のパラメータの修正は任意で実施してください。Azureに接続するクライアントのパブリックIPアドレスが分からない場合は[こちらのサイト](https://www.cman.jp/network/support/go_access.cgi)で確認することができます
+> [!IMPORTANT]
+> NSGルール作成用の ***myipaddress*** の修正は必須となります。それ以外のパラメータの修正は任意で実施してください。Azureに接続するクライアントのパブリックIPアドレスが分からない場合は[こちらのサイト](https://www.cman.jp/network/support/go_access.cgi)で確認することができます
 
 ※Git を利用できる環境ではない場合はファイルをダウンロードしていただくでも問題ないと思います。その場合は、以下の構成でローカルPCにファイルを設置してください
 
@@ -49,4 +49,9 @@ cd <main.bicepを設置したディレクトリ>
 3. デプロイの実行
 ```
 az deployment sub create --location japaneast -f main.bicep -p main.prod.bicepparam
+```
+
+4. Azureからのログアウト
+```
+az logout
 ```
