@@ -61,7 +61,7 @@ az logout
 ```
 
 ## 実行時のエラーについて
-デプロイ実行時に以下のエラーが出た場合は、すでに作成された環境を一度削除してから再度デプロイを行ってください
+#### 1. デプロイ実行時に以下のエラーが出た場合は、すでに作成された環境を一度削除してから再度デプロイを行ってください
 > DNS record hub-jump-win-01.japaneast.cloudapp.azure.com is already used by another public IP.
 
  本エラーは hub の踏み台サーバ (Jump-win-01) の DNS レコードが重複する場合に発生します。DNSレコードはパラメータファイルで指定した ***hubvmName1*** を利用して作成されるため複数デプロイを行うと DNS レコードが重複する仕様となります。本エラーを解消するためには以下2つのどちらかの対応を実施してください
@@ -70,3 +70,10 @@ az logout
 
 2. ***hubEnv.bicep*** の以下の行を削除する (削除することにより、FQDNによる hub の踏み台サーバへのアクセスはできなくなるが、IPアドレスでのアクセスは引き続き可能)
 https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a9253e78288050/modules/hubEnv.bicep#L114-L116
+
+#### 2. 以下のエラーが出た場合は、法的条件に同意する必要があるため Azure CLI もしくは 一度Azure Portalで指定したイメージを利用してデプロイを実施してください（同意は1回すればOK）
+> Inner Errors:
+> {"code": "BadRequest", "message": "Offer with PublisherId: 'cognosys', OfferId: 'centos-8-0-free' cannot be purchased due to validation errors.
+
+Azure CLI を利用する場合は以下URL参照してください
+https://learn.microsoft.com/ja-jp/cli/azure/vm/image/terms?view=azure-cli-latest
