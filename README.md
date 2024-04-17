@@ -76,4 +76,5 @@ https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a925
 > {"code": "BadRequest", "message": "Offer with PublisherId: 'cognosys', OfferId: 'centos-8-0-free' cannot be purchased due to validation errors.
 
 Azure CLI を利用する場合は以下URL参照してください
+
 https://learn.microsoft.com/ja-jp/cli/azure/vm/image/terms?view=azure-cli-latest
