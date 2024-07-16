@@ -78,3 +78,8 @@ https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a925
 Azure CLI を利用する場合は以下URL参照してください
 
 https://learn.microsoft.com/ja-jp/cli/azure/vm/image/terms?view=azure-cli-latest
+
+コマンド実行例 (azure CLI)
+```
+az vm image terms accept --publisher cognosys --offer centos-8-0-free --plan centos-8-0-free
+```
