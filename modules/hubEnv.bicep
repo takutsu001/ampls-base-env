@@ -23,6 +23,8 @@ param adminUserName string
 param adminPassword string
 // ----param for LAW----
 param lawName string
+// ----param for Spot VM----
+param useSpot bool = false
 
 /*
 ------------------
@@ -48,6 +50,16 @@ var hubSubnet3 = {
     }
   } 
 } 
+
+var vmPriorityProps = useSpot ? {
+  priority: 'Spot'
+  evictionPolicy: 'Deallocate'
+  billingProfile: {
+    maxPrice: -1
+  }
+} : {
+  priority: 'Regular'
+}
 
 /*
 ------------------
@@ -143,7 +155,7 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
 resource WindowsVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
   name: hubvmName1
   location: location
-  properties: {
+  properties: union({
     hardwareProfile: {
       vmSize: vmSizeWindows
     }
@@ -180,7 +192,7 @@ resource WindowsVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
         enabled: false
       }
     }
-  }
+  }, vmPriorityProps)
 }
 
 // Create Log Analytics Workspace

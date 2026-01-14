@@ -35,6 +35,8 @@ param adminUserName string
 param adminPassword string
 // ----param for LAW----
 param lawName string
+// ----param for Spot VM----
+param useSpot bool = false
 
 /*
 ------------------
@@ -71,6 +73,7 @@ module HubModule './modules/hubEnv.bicep' = {
     adminUserName: adminUserName
     adminPassword: adminPassword
     lawName: lawName
+    useSpot: useSpot
   } 
 }
 
@@ -89,5 +92,6 @@ module Spoke1Module './modules/spoke1Env.bicep' = {
     vmSizeLinux: vmSizeLinux
     adminUserName: adminUserName
     adminPassword: adminPassword
+    useSpot: useSpot
   } 
 }

@@ -22,6 +22,11 @@ param spoke1SubnetName1 = 'Spoke1-VMSubnet'
 param spoke1SubnetAddress1 = '10.1.0.0/24' 
 param vmSizeLinux = 'Standard_B1s'
 param spoke1vmName1 = 'spoke1-centos-01'
+// ---- param for Spot VM ----
+// true: Spot VM (evictionPolicy=Deallocate, maxPrice=-1)
+// false: Regular VM
+// NOTE: B-series は Spot 非対応のため、useSpot=true を使う場合は vmSizeWindows/vmSizeLinux を B 以外へ変更してください
+param useSpot = false
 // ---- Common param for VM ----
 param adminUserName = 'cloudadmin'
 param adminPassword = 'msjapan1!msjapan1!'

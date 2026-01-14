@@ -18,6 +18,8 @@ param vmSizeLinux string
 param adminUserName string
 @secure()
 param adminPassword string
+// ----param for Spot VM----
+param useSpot bool = false
 
 
 /*
@@ -35,6 +37,16 @@ var spoke1Subnet1 = {
     }
   } 
 } 
+
+var vmPriorityProps = useSpot ? {
+  priority: 'Spot'
+  evictionPolicy: 'Deallocate'
+  billingProfile: {
+    maxPrice: -1
+  }
+} : {
+  priority: 'Regular'
+}
 
 /*
 ------------------
@@ -150,7 +162,7 @@ resource centosVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
     publisher: 'cognosys'
     product: 'centos-8-0-free'
   }
-  properties: {
+  properties: union({
     hardwareProfile: {
       vmSize: vmSizeLinux
     }
@@ -187,7 +199,7 @@ resource centosVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
         enabled: false
       }
     }
-  }
+  }, vmPriorityProps)
 }
 
 /*
