@@ -76,6 +76,9 @@ az logout
 2. ***hubEnv.bicep*** の以下の行を削除する (削除することにより、FQDNによる hub の踏み台サーバへのアクセスはできなくなるが、IPアドレスでのアクセスは引き続き可能)
 https://github.com/takutsu001/ampls-base-env/blob/6d32ef589a24ecdb1851c4b564a9253e78288050/modules/hubEnv.bicep#L114-L116
 
+> [!NOTE]
+> 2026.01.14 Public IP の dnsSettings(domainNameLabel) を削除したため FQDN の自動割り当てを行いません。これにより DNS レコード重複に起因する本エラーは回避されます（接続はIPアドレスを利用）
+
 #### 2. 以下のエラーが出た場合は、法的条件に同意する必要があるため Azure CLI もしくは 一度Azure Portalで指定したイメージを利用してデプロイを実施してください（同意は1回すればOK）
 > Inner Errors:
 > {"code": "BadRequest", "message": "Offer with PublisherId: 'cognosys', OfferId: 'centos-8-0-free' cannot be purchased due to validation errors.
